@@ -19,6 +19,7 @@ import com.sowmya.contactmanagementapp.R
 import com.sowmya.contactmanagementapp.data.model.Contact
 import com.sowmya.contactmanagementapp.databinding.FragmentContactDetailBinding
 import com.sowmya.contactmanagementapp.viewmodel.ContactViewModel
+import com.sowmya.contactmanagementapp.ui.edit.EditContactFragment
 import kotlinx.coroutines.launch
 
 class ContactDetailFragment : Fragment() {

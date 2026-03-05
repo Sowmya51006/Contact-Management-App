@@ -19,6 +19,20 @@ class EditContactFragment : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: ContactViewModel by viewModels()
     private var imageUri: String? = null
+    private var contactId: Int = -1
+    private var currentContact: Contact? = null
+
+    companion object {
+        private const val ARG_CONTACT_ID = "contact_id"
+
+        fun newInstance(id: Int): EditContactFragment {
+            val fragment = EditContactFragment()
+            val args = Bundle()
+            args.putInt(ARG_CONTACT_ID, id)
+            fragment.arguments = args
+            return fragment
+        }
+    }
 
     private val pickImage = registerForActivityResult(androidx.activity.result.contract.ActivityResultContracts.GetContent()) { uri ->
         uri?.let {
